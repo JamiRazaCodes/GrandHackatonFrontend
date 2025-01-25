@@ -16,7 +16,7 @@ function SignupPage() {
     setIsLoading(true);
   
     try {
-      const response = await axios.post('https://grand-hackaton-backend.vercel.app/api/auth/signup', {
+      const response = await axios.post('http://localhost:8000/api/auth/signup', {
         username,
         email,
         password,

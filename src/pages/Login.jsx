@@ -21,10 +21,11 @@ function Login() {
 
       const data = await response.json();
       console.log('Response data:', data);
-      
+      navigate('/home');
+
       if (data.success) {
         console.log('Login successful, redirecting to /home');
-        navigate('/home');
+       
         } else {
             setError(data.message);
             }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router';
+import { Link, useNavigate} from 'react-router';
 
 function SignupPage() {
   const [username, setUsername] = useState('');
@@ -8,7 +8,8 @@ function SignupPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -26,7 +27,7 @@ function SignupPage() {
         setUsername('');
         setEmail('');
         setPassword('');
-        window.location.href = '/login';
+        navigate('/login');
       } else {
         setError('Signup failed');
       }
